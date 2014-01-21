@@ -3,6 +3,8 @@ shunt
 
 Shunt is a jquery plugin providing an api for hardware-accelerated css3 animations.  With shunt, css3 animations behave like native jquery animations: easily trigger animations via events, chain animations together with callbacks and choreograph rich effects.
 
+Check the fiddle here: http://jsfiddle.net/reconstrukt/jF45b/
+
 CSS3 animation examples courtesy of Animate.css (http://daneden.me/animate).
 
 Usage:
