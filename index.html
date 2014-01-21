@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>shunt-js demo</title>
+  
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/blur.css">
+  <link rel="stylesheet" type="text/css" href="css/demo.css">
+  
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="jquery.shunt.js"></script>
+  
+  <script>
+  
+  $(document).ready(function () {
+  
+      if (/WebKit/.test(navigator.userAgent)) {
+          // blur only supported in webkit at time of writing
+          $('.box-1').shunt('blurIn', 2000, 1000);
+      }
+  
+      $('.box-1').click(function() {
+  
+          $(this).shunt('flipOutY', 800, function() {
+  
+              $(this).addClass('red');
+              $(this).shunt('flipInY', 800, function(){
+  
+                  $(this).shunt('hinge', function(){
+  
+                      $(this).text('OUCH FELL DOWN');
+                      $(this).shunt('bounceInUp', 800, 1000, function(){
+  
+                          $(this).shunt('flipOutY', function(){
+  
+                              $(this).removeClass('red').text('FLIP FOR RED').shunt('flipInY');
+  
+                          });
+  
+                      });
+  
+                  });
+  
+              });
+  
+          });
+  
+      });
+  
+  });
+  
+  });//]]>  
+
+  </script>
+
+
+</head>
+
+<body>
+
+  <div class="box box-1">
+    <p>FLIP FOR RED</p>
+  </div>
+  
+</body>
+
+</html>
+
