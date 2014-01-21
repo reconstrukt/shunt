@@ -7,7 +7,7 @@ CSS3 animation examples courtesy of Animate.css (http://daneden.me/animate).
 
 Usage:
 
-shunt( animation_name, duration, start_delay, callback )
+$.shunt( animation_name, duration, start_delay, callback )
 
  - animation name: animation classname (for example, keyframes from animate.css)
  - duration: optional playback time, millis (default = 1 sec)
