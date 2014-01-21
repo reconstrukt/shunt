@@ -1,0 +1,81 @@
+/*
+webkit only animations: blurIn, blurOut, toGray, fromGray
+*/
+ @-webkit-keyframes blurIn {
+    0% {
+        -webkit-filter: blur(70px);
+        filter: blur(70px);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+@keyframes blurIn {
+    0% {
+        -webkit-filter: blur(70px);
+        -moz-filter: blur(70px);
+        -ms-filter: blur(70px);
+        -o-filter: blur(70px);
+        filter: blur(70px);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -ms-filter: blur(0px);
+        -o-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+.blurIn {
+    -webkit-animation-name: blurIn;
+    animation-name: blurIn;
+}
+@-webkit-keyframes blurOut {
+    0% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-filter: blur(70px);
+        filter: blur(70px);
+        opacity: 0;
+    }
+}
+@keyframes blurOut {
+    0% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -ms-filter: blur(0px);
+        -o-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-filter: blur(70px);
+        -moz-filter: blur(70px);
+        -ms-filter: blur(70px);
+        -o-filter: blur(70px);
+        filter: blur(70px);
+        opacity: 0;
+    }
+}
+.blurOut {
+    -webkit-animation-name: blurOut;
+    animation-name: blurOut;
+}
