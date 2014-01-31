@@ -16,15 +16,15 @@ shunt( animation_name, duration, start_delay, callback )
  - callback, optional
 */
 
-$.fn.shunt = function (animation, duration, start, cb) {
+jQuery.fn.shunt = function (animation, duration, start, cb) {
 
     // shorthand call style
-    if ($.isFunction(duration)) {
+    if (jQuery.isFunction(duration)) {
         cb = duration;
         duration = 1000;
         start = 0;
     }
-    if ($.isFunction(start)) {
+    if (jQuery.isFunction(start)) {
         cb = start;
         start = 0;
     }
@@ -56,7 +56,7 @@ $.fn.shunt = function (animation, duration, start, cb) {
     .attr('data-shunt-animcss', animcss.join(','))
     .one(endevent, function(){
 
-        var source = $('.' + uid);
+        var source = jQuery('.' + uid);
 
         var classes = source.attr('data-shunt-classes');
         source.removeClass(classes);
@@ -68,7 +68,7 @@ $.fn.shunt = function (animation, duration, start, cb) {
         .removeAttr('data-shunt-classes')
         .removeAttr('data-shunt-animcss');
 
-        if ($.isFunction(cb)) $(this).each(cb);
+        if (jQuery.isFunction(cb)) jQuery(this).each(cb);
     });
 
 };
