@@ -62,7 +62,7 @@ jQuery.fn.shunt = function (animation, duration, start, cb) {
         source.removeClass(classes);
 
         var animcss = source.attr('data-shunt-animcss').split(',');
-        for (var i in animcss) source.css(animcss[i], '');
+        for (i=0; i < animcss.length; i++) source.css(animcss[i], '');
 
         source
         .removeAttr('data-shunt-classes')
