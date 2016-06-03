@@ -1,38 +1,31 @@
 /*
-shunt-js - http://reconstrukt.com
-Licensed under the MIT license
+shunt - https://github.com/reconstrukt/shunt
 
-Copyright (c) 2013 Matthew Knight
+A jquery plugin for css3 animation chaining. 
 
-Provides a jquery api for chaining together, and controlling playback of, CSS3 animations. Animation examples courtesy of Animate.css (http://daneden.me/animate).
-
-Usage:
-
-shunt( animation_name, duration, start_delay, callback )
-
- - animation name: animation classname, from animate.css
- - duration: optional playback time, millis (default = 1 sec)
- - start time: optional delay, millis (default = 0 sec, start immediately)
- - callback, optional
+by Matthew Knight, http://reconstrukt.com
+Licensed under the MIT license. 
 */
 
-jQuery.fn.shunt = function (animation, duration, start, cb) {
+(function(jQuery){
+
+  jQuery.fn.shunt = function(animation, duration, start, cb) {
 
     // shorthand call style
     if (jQuery.isFunction(duration)) {
-        cb = duration;
-        duration = 1000;
-        start = 0;
+      cb = duration;
+      duration = 1000;
+      start = 0;
     }
     if (jQuery.isFunction(start)) {
-        cb = start;
-        start = 0;
+      cb = start;
+      start = 0;
     }
     if (typeof duration !== 'number') duration = 1000;
     if (typeof start !== 'number') start = 0;
 
     var uid = 'shunt-' + (new Date().getTime()) + '-' + (Math.floor( Math.random()*1000000 ));
-	
+  
     var classes = [uid, 'animated ' + animation];
     var prefixes = ['webkit-', 'moz-', 'ms-', 'o-', ''];
     var endevent = 'animationend webkitAnimationEnd oAnimationEnd';
@@ -42,12 +35,12 @@ jQuery.fn.shunt = function (animation, duration, start, cb) {
 
     var animcss = [];
     for (var i in prefixes) {
-        var dur = prefixes[i] + 'animation-duration';
-        var del = prefixes[i] + 'animation-delay';
-        animcss.push(dur);
-        animcss.push(del);
+      var dur = prefixes[i] + 'animation-duration';
+      var del = prefixes[i] + 'animation-delay';
+      animcss.push(dur);
+      animcss.push(del);
 
-        this.css(dur, ttl).css(del, delay);
+      this.css(dur, ttl).css(del, delay);
     }
 
     this
@@ -56,19 +49,21 @@ jQuery.fn.shunt = function (animation, duration, start, cb) {
     .attr('data-shunt-animcss', animcss.join(','))
     .one(endevent, function(){
 
-        var source = jQuery('.' + uid);
+      var source = jQuery('.' + uid);
 
-        var classes = source.attr('data-shunt-classes');
-        source.removeClass(classes);
+      var classes = source.attr('data-shunt-classes');
+      source.removeClass(classes);
 
-        var animcss = source.attr('data-shunt-animcss').split(',');
-        for (i=0; i < animcss.length; i++) source.css(animcss[i], '');
+      var animcss = source.attr('data-shunt-animcss').split(',');
+      for (i=0; i < animcss.length; i++) source.css(animcss[i], '');
 
-        source
-        .removeAttr('data-shunt-classes')
-        .removeAttr('data-shunt-animcss');
+      source
+      .removeAttr('data-shunt-classes')
+      .removeAttr('data-shunt-animcss');
 
-        if (jQuery.isFunction(cb)) jQuery(this).each(cb);
+      if (jQuery.isFunction(cb)) jQuery(this).each(cb);
     });
 
-};
+  };
+
+})(jQuery);
