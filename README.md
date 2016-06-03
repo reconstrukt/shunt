@@ -34,22 +34,22 @@ Here's an example that plays a 3-step choreographed animation onclick:
 <script>
 
 $('.box-1').click(function() {
-  
-  $('.box-1').shunt('flipOutY', function() {
 
-    $(this).shunt('flipInY', function(){
+   $('.box-1').shunt('flipOutY', function() {
 
-      $(this)
-        .text('OMG, FALLING')
-        .shunt('hinge', 3000, 1500, function(){
-      
-          alert('all gone.');
+     $(this).shunt('flipInY', function(){
+
+       $(this)
+         .text('IMMA FALL DOWN')
+         .shunt('hinge', 2000, 1000, function(){
           
-        });
-      });
-    });
-  });  
-});
+          $(this).text('OUCH THAT HURT');
+          alert('all done.');
+
+       });
+     });
+   });
+ }); 
 
 ```
 
