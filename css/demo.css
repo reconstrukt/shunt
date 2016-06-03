@@ -21,3 +21,6 @@ body {
 .red {
     color: red;
 }
+.box p {
+    margin: 0;
+}
