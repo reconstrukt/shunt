@@ -1,26 +1,26 @@
 @charset"UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:700);
 body {
-    background: #000;
+  background: #000;
 }
 .box {
-    cursor: pointer;
-    border: #ffffff solid 7px;
-    font-size: 70px;
-    line-height: 80px;
-    text-align: center;
-    color: #fff;
-    margin: 20px auto;
-    padding: 13px;
-    width: 250px;
-    height: 250px;
-    font-family:'Montserrat', sans-serif;
-    font-weight: 700;
-    font-style: normal;
+  cursor: pointer;
+  border: #ffffff solid 7px;
+  font-size: 70px;
+  line-height: 80px;
+  text-align: center;
+  color: #fff;
+  margin: 20px auto;
+  padding: 13px;
+  width: 250px;
+  height: 250px;
+  font-family:'Montserrat', sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 .red {
-    color: red;
+  color: red;
 }
 .box p {
-    margin: 0;
+  margin: 0;
 }

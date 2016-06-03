@@ -1,7 +1,4 @@
-/*
-webkit only animations: blurIn, blurOut, toGray, fromGray
-*/
- @-webkit-keyframes blurIn {
+@-webkit-keyframes blurIn {
     0% {
         -webkit-filter: blur(70px);
         filter: blur(70px);
