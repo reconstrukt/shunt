@@ -1,0 +1,43 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>shunt-js demo</title>
+
+  <link rel="stylesheet" type="text/css" href="css/blur.css">
+  <link rel="stylesheet" type="text/css" href="css/demo.css">
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="jquery.shunt.js"></script>
+
+  <script>
+
+  $(document).ready( function(){
+    
+    // play a 2-step blur css3 animation
+    
+    $('.box-1').shunt('blurIn', 2000, 1000, function(){
+      
+      $(this).shunt('blurOut', 2000, 1000, function(){
+        
+        $(this).hide();
+      
+      });
+      
+    });
+    
+  });
+
+  </script>
+  </head>
+
+  <body>
+
+  <div class="box box-1">
+    <p>TRY TO FOCUS</p>
+  </div>
+
+  </body>
+
+  </html>
+

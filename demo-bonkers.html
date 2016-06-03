@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>shunt-js demo</title>
+  
+  <link rel="stylesheet" type="text/css" href="https://rawgit.com/daneden/animate.css/master/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/demo.css">
+  
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="jquery.shunt.js"></script>
+  
+  <script>
+  
+  $(document).ready( function(){
+  
+    // onclick, 
+    // play a 10-step choreographed css3 animation sequence
+    // ridiculous. whatever
+  
+    $('.box-1,.box-2').click(function() {
+      
+      // step 1
+      $(this).shunt('flipOutY', 800, function() {
+        
+        // step 2
+        $(this)
+        .addClass('red')
+        .shunt('flipInY', 800, function(){
+          
+          // step 3
+          $(this).shunt('hinge', function(){
+            
+            // step 4
+            $(this).shunt('bounceInUp', function(){
+              
+              // step 5
+              $(this).shunt('tada', function(){
+              
+                // step 6
+                $(this)
+                .removeClass('red')
+                .text('HALF WAY DONE')
+                .shunt('wobble', function(){
+                
+                  // step 7
+                  $(this).shunt('flash', function(){
+                  
+                    // step 8
+                    $(this)
+                    .text('MAKE IT STOP') 
+                    .shunt('jello', function(){
+                    
+                      // step 9
+                      $(this).shunt('lightSpeedOut', function(){
+                      
+                        // step 10
+                        $(this).shunt('lightSpeedIn', function(){
+                        
+                          // done, exit
+                          $(this)
+                          .text('BYE FOR NOW') 
+                          .shunt('fadeOutUp', 2500, function(){
+                          
+                            $(this).hide();
+                            
+                          }); // exit
+                        
+                        }); // step 10
+                      
+                      }); // step 9
+                    
+                    }); // step 8
+                    
+                  }); // step 7
+                
+                }); // step 6
+
+              }); // step 5
+
+            }); // step 4
+
+          }); // step 3
+
+        }); // step 2
+
+      }); // step 1
+
+    }); // onclick
+  
+  });  
+  </script>
+
+</head>
+
+<body>
+
+  <div class="box box-1">
+    <p>CLICK TO PLAY</p>
+  </div>
+  
+  <div class="box box-2">
+    <p>OR CLICK ME</p>
+  </div>
+  
+</body>
+
+</html>
+

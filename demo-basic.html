@@ -1,0 +1,55 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>shunt-js demo</title>
+
+  <link rel="stylesheet" type="text/css" href="https://rawgit.com/daneden/animate.css/master/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/demo.css">
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="jquery.shunt.js"></script>
+
+  <script>
+
+  $(document).ready( function(){
+    
+    // onclick, 
+    // play a 3-step choreographed css3 animation
+    
+    $('.box-1').click(function() {
+      
+      // step 1
+      $('.box-1').shunt('flipOutY', function() {
+      
+        // step 2
+        $(this).shunt('flipInY', function(){
+          
+          // step 3
+          $(this)
+          .text('IMMA FALL DOWN')
+          .shunt('hinge', 2000, 1000, function(){
+
+            $(this).text('OUCH THAT HURT');
+            alert('all done.');
+
+          });
+        });
+      });
+    });
+
+  });
+
+  </script>
+  </head>
+
+  <body>
+
+  <div class="box box-1">
+    <p>CLICK TO PLAY</p>
+  </div>
+
+  </body>
+
+  </html>
+
