@@ -60,4 +60,3 @@ Shout out
 ---------
 
 CSS3 animation examples courtesy of Animate.css, http://daneden.me/animate
-
